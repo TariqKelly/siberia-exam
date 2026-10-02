@@ -1,7 +1,4 @@
-# The site lives in a subfolder. `base` points Netlify at it; `publish` and
-# `functions` are relative to that base. This file overrides the UI settings.
 [build]
-  base = "siberia-exam-netlify/siberia-netlify"
   publish = "public"
   functions = "netlify/functions"
 
