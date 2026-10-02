@@ -4,7 +4,7 @@ The exam page plus one small server function that stores the question bank.
 
 - `public/index.html` — the exam
 - `netlify/functions/bank.mjs` — loads and saves the question bank, checks the admin password
-- `netlify.toml`, `package.json` — Netlify settings
+- `package.json` — dependencies (Netlify settings are in `netlify.toml` at the repo root)
 
 ## Put it online
 
