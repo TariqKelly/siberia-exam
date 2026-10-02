@@ -1,8 +1,0 @@
-{
-  "name": "siberia-induction-exam",
-  "private": true,
-  "type": "module",
-  "dependencies": {
-    "@netlify/blobs": "^11.1.3"
-  }
-}
