@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Siberian Induction Exam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +26,7 @@
 [hidden]{display:none!important}
 #intro .wrap>*{min-width:0}
 html,body{height:100%}
-body{background:var(--night);color:var(--text);font:16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--night);color:var(--text);font:16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
 input{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--silver);outline-offset:3px;border-radius:6px}
@@ -426,6 +431,8 @@ select.input{appearance:auto}
 }
 </style>
 
+</head>
+<body>
 <template id="pageMarkup">
 <canvas id="sky" aria-hidden="true"></canvas>
 
@@ -1380,3 +1387,5 @@ loadBank();
 window.__exam={grade,get Q(){return Q},get S(){return S}};
 })();
 </script>
+</body>
+</html>
