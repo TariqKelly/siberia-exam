@@ -418,6 +418,65 @@ select.input{appearance:auto}
   .adm-bar-row{padding-inline:16px}
 }
 
+/* ---------- answer review ---------- */
+.rv{margin-top:34px}
+.rv-open{width:100%;justify-content:center;padding:15px 18px;font-size:16px}
+.rv-open .chev2{transition:transform .3s var(--ease)}
+.rv-open[aria-expanded="true"] .chev2{transform:rotate(180deg)}
+.rv-panel{margin-top:22px;animation:fade .35s}
+.rv-head{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line-2)}
+.rv-sum{margin:0;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px}
+.rv-sum b{font-family:var(--f-display);font-weight:800;font-size:22px;margin-right:4px}
+.rv-sum .c b{color:var(--ok)}.rv-sum .p b{color:var(--warn)}.rv-sum .w b{color:var(--bad)}.rv-sum .n b{color:var(--muted)}
+.rv-filters{display:inline-flex;border:1px solid var(--line-2);border-radius:3px;overflow:hidden;flex-wrap:wrap}
+.rv-filters button{padding:8px 12px;font-size:13px;color:var(--muted);transition:background .2s,color .2s}
+.rv-filters button+button{border-left:1px solid var(--line-2)}
+.rv-filters button[aria-pressed="true"]{background:var(--ice);color:var(--night)}
+.rv-sec{font-family:var(--f-display);font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.03em;margin:26px 0 4px;color:var(--silver)}
+.rv-item{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);animation:fade .3s both}
+.rv-badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:16px;border:1.5px solid transparent}
+.rv-badge.correct{background:var(--ok);color:var(--night)}
+.rv-badge.wrong{background:var(--bad);color:var(--night)}
+.rv-badge.partial{border-color:var(--warn);color:var(--warn)}
+.rv-badge.blank{border-color:var(--line-2);color:var(--muted)}
+.rv-body{min-width:0}
+.rv-meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);margin-bottom:4px}
+.rv-meta .pts{color:var(--ice)}
+.rv-q{margin:0 0 10px;font-weight:700;color:var(--ice);font-size:17px;line-height:1.4}
+.rv-opts{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.rv-opts li{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start;padding:8px 12px;border:1px solid var(--line);border-radius:3px;color:var(--text);font-size:15px}
+.rv-opts li .k{font-weight:700;text-align:center}
+.rv-opts li.is-correct{border-color:rgba(147,224,194,.55);background:rgba(147,224,194,.08)}
+.rv-opts li.is-correct .k{color:var(--ok)}
+.rv-opts li.is-wrong{border-color:rgba(242,133,122,.6);background:rgba(242,133,122,.08)}
+.rv-opts li.is-wrong .k{color:var(--bad)}
+.rv-opts li.is-missed{border-style:dashed;border-color:rgba(147,224,194,.55)}
+.rv-opts li.is-missed .k{color:var(--ok)}
+.rv-opts em,.rv-tag{font-style:normal;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:6px;white-space:nowrap}
+.rv-pairs{display:grid;gap:6px}
+.rv-pair{display:grid;grid-template-columns:130px 1fr;gap:10px;align-items:baseline}
+.rv-pair .mono{color:var(--muted)}
+.ok-t{color:var(--ok)}.bad-t{color:var(--bad)}.dim-t{color:var(--muted)}
+.rv-tbl-wrap{overflow-x:auto}
+.rv-tbl{width:100%;border-collapse:collapse;font-size:15px;min-width:420px}
+.rv-tbl th{text-align:left;font-family:var(--f-mono);font-weight:400;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line-2)}
+.rv-tbl td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.rv-tbl td.mk{width:24px;font-weight:700}
+.rv-tbl svg{width:84px;height:auto;display:block}
+.rv-cloze{font-size:17px;line-height:2;color:var(--ice);margin:0}
+.rv-gap{display:inline-block;padding:0 6px;border-bottom:2px solid;font-style:normal}
+.rv-gap.ok{border-color:var(--ok);color:var(--ok)}
+.rv-gap.bad{border-color:var(--bad);color:var(--bad)}
+.rv-gap small{font-family:var(--f-mono);font-size:11px;color:var(--ok);margin-left:6px}
+.rv-flags{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,240px));gap:16px}
+.rv-flags figure{margin:0;display:grid;gap:6px}
+.rv-flags figcaption{color:var(--muted)}
+.rv-flags svg{width:100%;height:auto;display:block;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.rv-flags .hit.sel{filter:drop-shadow(0 0 0 #93E0C2) drop-shadow(0 0 6px #93E0C2)}
+.rv-flags .hit{cursor:default}
+.rv-empty{color:var(--muted);padding:20px 0}
+@media (max-width:620px){.rv-pair{grid-template-columns:1fr;gap:0}.rv-item{grid-template-columns:34px 1fr;gap:10px}.rv-badge{width:28px;height:28px;font-size:14px}}
+
 @media (max-width:860px){
   #intro .wrap{grid-template-columns:1fr;gap:36px;padding-block:36px 48px}
   .r-hero{grid-template-columns:1fr}
@@ -533,6 +592,13 @@ select.input{appearance:auto}
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="4" width="22" height="32" rx="3"/><path d="M17 31h6"/><path d="M14 16l4 4 8-8" stroke="#93E0C2"/></svg>
       <div><strong>Show this screen to your invigilator</strong><span>Stay seated and keep this page open until a Bear has recorded your result.</span></div>
     </div>
+    <section class="rv reveal" id="rvWrap">
+      <button class="btn rv-open" id="rvToggle" aria-expanded="false" aria-controls="rvPanel"><span>Review your answers</span><svg class="chev2" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 6 5 5 5-5"/></svg></button>
+      <div class="rv-panel" id="rvPanel" hidden>
+        <div class="rv-head"><p class="rv-sum" id="rvSum"></p><div class="rv-filters" id="rvFilters"><button data-f="all" aria-pressed="true">All</button><button data-f="wrong" aria-pressed="false">Wrong</button><button data-f="partial" aria-pressed="false">Partly right</button><button data-f="correct" aria-pressed="false">Correct</button></div></div>
+        <div id="rvList"></div>
+      </div>
+    </section>
     <div class="reset reveal" id="resetWrap">
       <button class="hold" id="resetBtn" style="--hold-ms:2500ms"><span>Invigilator · hold to reset for next cub</span></button>
     </div>
@@ -1108,6 +1174,7 @@ let liveT=null;
 const fmt=n=>(Math.round(n*10)/10).toString();
 function showResults(animate){
   const r=S.result;
+  rvBuilt=false;rvFilter='all';$('rvPanel').hidden=true;$('rvToggle').setAttribute('aria-expanded','false');$('rvToggle').querySelector('span').textContent='Review your answers';
   $('rLabel').textContent=S.test?'Test run · not a real result':'Induction Examination · Official result';$('rLabel').classList.toggle('testrun',!!S.test);const anim=animate&&!reduce;
   $('intro').hidden=true;$('exam').hidden=true;$('admin').hidden=true;$('results').hidden=false;scrollTo(0,0);
   const wrap=$('results');wrap.classList.toggle('pass',r.pass);wrap.classList.toggle('fail',!r.pass);
@@ -1150,6 +1217,59 @@ function burst(){
       for(let i=0;i<p.n*2;i++){const rr=i%2?p.r*(p.n===4?.3:.46):p.r;const a=-Math.PI/2+i*Math.PI/p.n;ctx.lineTo(rr*Math.cos(a),rr*Math.sin(a))}ctx.closePath();ctx.fill();ctx.restore()}
     if(alive&&t-t0<5000)requestAnimationFrame(f);else{cv.hidden=true}})(t0);
 }
+/* ================= ANSWER REVIEW ================= */
+const RV_MARK={correct:'✓',partial:'◐',wrong:'✗',blank:'–'};
+const RV_LABEL={correct:'Correct',partial:'Partly right',wrong:'Wrong',blank:'Not answered'};
+function rvState(q){const a=S.ans[q.id];const f=grade(q,a);if(a===undefined||a===null||status(q)==='none')return{st:'blank',f:0};return{st:f>=0.999?'correct':f>0?'partial':'wrong',f}}
+const shown=v=>v===undefined||v===null||String(v).trim()===''?'<span class="dim-t">(blank)</span>':esc(v);
+const pair=(l,v,cls)=>`<div class="rv-pair"><span class="mono">${l}</span><span class="${cls||''}">${v}</span></div>`;
+const rvTick=ok=>ok?'<span class="ok-t">✓</span>':'<span class="bad-t">✗</span>';
+function rvBody(q,a){
+  switch(q.t){
+    case 'mcq':return `<ul class="rv-opts">${S.perm[q.id].map(oi=>{const c=oi===q.a,p=a===oi;return `<li class="${c?'is-correct':p?'is-wrong':''}"><span class="k">${c?'✓':p?'✗':''}</span><span>${esc(q.o[oi])}${p?'<em>your answer</em>':c?'<em>correct answer</em>':''}</span></li>`}).join('')}</ul>`;
+    case 'multi':{const sel=new Set(a||[]);return `<ul class="rv-opts">${S.perm[q.id].map(oi=>{const c=q.a.includes(oi),p=sel.has(oi);const cls=c&&p?'is-correct':p?'is-wrong':c?'is-missed':'';const tag=c&&p?'you picked':p?'wrong pick':c?'you missed this':'';return `<li class="${cls}"><span class="k">${c&&p?'✓':p?'✗':c?'○':''}</span><span>${esc(q.o[oi])}${tag?`<em>${tag}</em>`:''}</span></li>`}).join('')}</ul>`}
+    case 'typed':{const ok=grade(q,a)===1;return `<div class="rv-pairs">${pair('Your answer',shown(a),ok?'ok-t':'bad-t')}${ok?'':pair('Correct answer',esc(q.accept.join(' / ')),'ok-t')}</div>`}
+    case 'number':{const ok=grade(q,a)===1;return `<div class="rv-pairs">${pair('Your answer',shown(a),ok?'ok-t':'bad-t')}${ok?'':pair('Correct answer',esc(q.a),'ok-t')}</div>`}
+    case 'verdicts':{const x=a||{};return `<div class="rv-tbl-wrap"><table class="rv-tbl"><thead><tr><th></th><th>Statement</th><th>You said</th><th>Answer</th></tr></thead><tbody>${q.items.map((it,i)=>{const has=x[i]!==undefined;const ok=has&&x[i]===it.a;return `<tr><td class="mk">${has?rvTick(ok):'<span class="dim-t">–</span>'}</td><td>${esc(it.q)}</td><td class="${has?(ok?'ok-t':'bad-t'):'dim-t'}">${has?(x[i]?'True':'False'):'Blank'}</td><td>${it.a?'True':'False'}</td></tr>`}).join('')}</tbody></table></div>`}
+    case 'match':{const x=a||{};const lab=id=>{const r=q.right.find(r=>r.id===id);return r?esc(r.l):''};return `<div class="rv-tbl-wrap"><table class="rv-tbl"><thead><tr><th></th><th>${q.flags?'Flag':'Item'}</th><th>Your match</th><th>Correct match</th></tr></thead><tbody>${q.left.map(l=>{const has=!!x[l.id];const ok=x[l.id]===l.a;return `<tr><td class="mk">${has?rvTick(ok):'<span class="dim-t">–</span>'}</td><td>${q.flags?flagSVG(l.flag):esc(l.l)}</td><td class="${has?(ok?'ok-t':'bad-t'):'dim-t'}">${has?lab(x[l.id]):'Blank'}</td><td>${lab(l.a)}</td></tr>`}).join('')}</tbody></table></div>`}
+    case 'order':{const o=a||S.perm[q.id]||[];return `<div class="rv-tbl-wrap"><table class="rv-tbl"><thead><tr><th></th><th>#</th><th>Your order</th><th>Correct order</th></tr></thead><tbody>${q.items.map((it,i)=>{const ok=o[i]===i;return `<tr><td class="mk">${a?rvTick(ok):'<span class="dim-t">–</span>'}</td><td class="dim-t">${i+1}</td><td class="${a?(ok?'ok-t':'bad-t'):'dim-t'}">${esc(q.items[o[i]]??'')}</td><td>${esc(it)}</td></tr>`}).join('')}</tbody></table></div>`}
+    case 'cloze':{const x=a||{};let k=0;return `<p class="rv-cloze">${q.parts.map(p=>{if(typeof p==='string')return esc(p);const i=k++;const ok=textOK(x[i],p.b,p.tol||q.tol);return `<span class="rv-gap ${ok?'ok':'bad'}">${x[i]&&String(x[i]).trim()?esc(x[i]):'blank'}</span>${ok?'':`<small class="ok-t" style="font-family:var(--f-mono);font-size:12px;margin:0 4px">→ ${esc(p.b[0])}</small>`}`}).join('')}</p>`}
+    case 'ledger':{const x=a||{};let k=0;return `<div class="rv-tbl-wrap"><table class="rv-tbl"><thead><tr>${q.cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${q.rows.map(r=>`<tr><td class="dim-t" style="white-space:nowrap">${esc(r[0])}</td><td>${r[1].map(p=>{if(typeof p==='string')return esc(p);const i=k++;const ok=textOK(x[i],p.b,p.tol||q.tol);return `<span class="rv-gap ${ok?'ok':'bad'}">${x[i]&&String(x[i]).trim()?esc(x[i]):'blank'}</span>${ok?'':`<small class="ok-t" style="font-family:var(--f-mono);font-size:12px;margin:0 4px">→ ${esc(p.b[0])}</small>`}`}).join('')}</td></tr>`).join('')}</tbody></table></div>`}
+    case 'sort':{const x=a||{};return `<div class="rv-tbl-wrap"><table class="rv-tbl"><thead><tr><th></th><th>Item</th><th>You put it in</th><th>Belongs in</th></tr></thead><tbody>${(S.perm[q.id]||range(q.items.length)).map(i=>{const it=q.items[i];const has=x[i]!==undefined;const ok=x[i]===it[1];return `<tr><td class="mk">${has?rvTick(ok):'<span class="dim-t">–</span>'}</td><td>${esc(it[0])}</td><td class="${has?(ok?'ok-t':'bad-t'):'dim-t'}">${has?esc(q.buckets[x[i]]):'Not placed'}</td><td>${esc(q.buckets[it[1]])}</td></tr>`}).join('')}</tbody></table></div>`}
+    case 'forgery':{const fg=forgeOf(q);const svg=fg.make(true).replace(`class="hit" data-hit="${fg.hit}"`,`class="hit sel" data-hit="${fg.hit}"`).replace(/tabindex="0" role="button" /g,'');const ok=a===fg.hit;return `<div class="rv-flags"><figure>${svg}<figcaption class="mono">Wrong element highlighted</figcaption></figure></div><div class="rv-pairs" style="margin-top:10px">${pair('You marked',a?esc(HIT_NAMES[a]):'<span class="dim-t">(nothing)</span>',a?(ok?'ok-t':'bad-t'):'')}${pair('The mistake',esc(fg.l),'ok-t')}</div>`}
+    case 'builder':{const x=a||{};const opt=(k,v)=>{const c=BCTRL.find(c=>c.k===k);const o=c&&c.o.find(o=>o[0]===v);return o?o[1]:'Not chosen'};return `<div class="rv-flags"><figure>${composeFlag({field:x.field||'none',star:x.star||'none',pos:x.pos||'left',bear:x.bear||'none'})}<figcaption class="mono">Your flag</figcaption></figure><figure>${composeFlag(q.a)}<figcaption class="mono">Correct flag</figcaption></figure></div><div class="rv-pairs" style="margin-top:10px">${BCTRL.map(c=>{const ok=x[c.k]===q.a[c.k];return pair(c.l,`${rvTick(ok)} ${esc(opt(c.k,x[c.k]))}${ok?'':` <span class="dim-t">· should be</span> <span class="ok-t">${esc(opt(c.k,q.a[c.k]))}</span>`}`)}).join('')}</div>`}
+  }
+  return '';
+}
+let rvFilter='all',rvBuilt=false;
+function buildReview(){
+  const rows=S.order.map((id,i)=>{const q=QM[id];return{q,i,...rvState(q)}});
+  const n=st=>rows.filter(r=>r.st===st).length;
+  $('rvSum').innerHTML=`<span class="c"><b>${n('correct')}</b>correct</span><span class="p"><b>${n('partial')}</b>partly right</span><span class="w"><b>${n('wrong')}</b>wrong</span>${n('blank')?`<span class="n"><b>${n('blank')}</b>not answered</span>`:''}`;
+  let html='',sec=null;
+  rows.forEach(r=>{
+    if(r.q.s!==sec){sec=r.q.s;html+=`<h3 class="rv-sec" data-sec="${sec}">${SECS[sec].n} · ${SECS[sec].name}</h3>`}
+    html+=`<article class="rv-item" data-st="${r.st}" data-sec="${r.q.s}"><span class="rv-badge ${r.st}" aria-label="${RV_LABEL[r.st]}">${RV_MARK[r.st]}</span><div class="rv-body">
+      <div class="rv-meta mono"><span>Question ${r.i+1}</span><span>${KIND[r.q.t]}</span><span class="pts">${fmt(r.f*r.q.w)} / ${fmt(r.q.w)} ${r.q.w===1?'pt':'pts'}</span><span>${RV_LABEL[r.st]}</span></div>
+      <p class="rv-q">${esc(r.q.p)}</p>${rvBody(r.q,S.ans[r.q.id])}</div></article>`;
+  });
+  $('rvList').innerHTML=html;rvBuilt=true;applyRvFilter();
+}
+function applyRvFilter(){
+  const items=[...document.querySelectorAll('#rvList .rv-item')];
+  items.forEach(el=>el.hidden=!(rvFilter==='all'||el.dataset.st===rvFilter||(rvFilter==='wrong'&&el.dataset.st==='blank')));
+  document.querySelectorAll('#rvList .rv-sec').forEach(h=>h.hidden=!items.some(el=>el.dataset.sec===h.dataset.sec&&!el.hidden));
+  const old=$('rvList').querySelector('.rv-empty');old&&old.remove();
+  if(!items.some(el=>!el.hidden))$('rvList').insertAdjacentHTML('beforeend','<p class="rv-empty">No questions in this group.</p>');
+  document.querySelectorAll('#rvFilters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===rvFilter));
+}
+$('rvToggle').addEventListener('click',()=>{
+  const p=$('rvPanel'),open=p.hidden;
+  if(open&&!rvBuilt)buildReview();
+  p.hidden=!open;$('rvToggle').setAttribute('aria-expanded',open);$('rvToggle').querySelector('span').textContent=open?'Hide your answers':'Review your answers';
+  if(open)setTimeout(()=>$('rvToggle').scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'}),30);
+});
+document.querySelectorAll('#rvFilters button').forEach(b=>b.addEventListener('click',()=>{rvFilter=b.dataset.f;applyRvFilter()}));
 holdable($('resetBtn'),2500,()=>{S=fresh();setTest(false);save();clearInterval(liveT);location.reload()});
 
 /* ================= INTEGRITY ================= */
